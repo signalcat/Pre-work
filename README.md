@@ -7,7 +7,7 @@ Pre work simple to do app for code path application.
 
 Submitted by: **Rebecca He Zhang**
 
-Time spent: **8** hours spent in total
+Time spent: **4** hours spent in total
 
 ## User Stories
 
