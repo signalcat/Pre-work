@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.codepath.simpletodo.MainActivity">
+
+    <Button
+        android:id="@+id/btnAddItem"
+        android:layout_width="117dp"
+        android:layout_height="wrap_content"
+        android:text="ADD ITEM"
+        android:onClick="onAddItem"
+        tools:layout_editor_absoluteX="252dp"
+        tools:layout_editor_absoluteY="447dp"
+        android:layout_below="@+id/lvItems"
+        android:layout_alignRight="@+id/lvItems"
+        android:layout_alignEnd="@+id/lvItems"
+        android:layout_marginRight="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginTop="14dp" />
+
+    <ListView
+        android:id="@+id/lvItems"
+        android:layout_width="368dp"
+        android:layout_height="418dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp" />
+
+    <EditText
+        android:id="@+id/etNewItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btnAddItem"
+        android:layout_toLeftOf="@+id/btnAddItem"
+        android:layout_toStartOf="@+id/btnAddItem"
+        android:ems="10"
+        android:hint="Enter a new item"
+        android:inputType="textPersonName" />
+</RelativeLayout>
