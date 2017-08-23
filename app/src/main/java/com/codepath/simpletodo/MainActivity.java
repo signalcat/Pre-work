@@ -1,6 +1,8 @@
 package com.codepath.simpletodo;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -47,9 +49,31 @@ public class MainActivity extends AppCompatActivity {
                 new AdapterView.OnItemLongClickListener() {
                     @Override
                     public boolean onItemLongClick(AdapterView<?> adapterView, View view, int pos, long id) {
-                        items.remove(pos);
-                        itemsAdapter.notifyDataSetChanged();
-                        writeItems();
+
+                        // Ask the user before delete
+                        // Create a AlertDialog builder
+                        final int position = pos;
+                        AlertDialog.Builder alert_builder = new AlertDialog.Builder(MainActivity.this);
+                        alert_builder.setMessage("Are you sure you want to delete this item?")
+                                .setCancelable(false)
+                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        items.remove(position);
+                                        itemsAdapter.notifyDataSetChanged();
+                                        writeItems();
+                                    }
+                                })
+                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        dialogInterface.cancel();
+                                    }
+                                });
+                        // Show the alert
+                        AlertDialog alert = alert_builder.create();
+                        alert.setTitle("Alert !!!");
+                        alert.show();
                         return true;
                     }
                 }
