@@ -19,7 +19,10 @@ import java.util.ArrayList;
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
+
+    // Declare array list to store different strings.
     ArrayList<String> items;
+    // Adapter to connect data and listview
     ArrayAdapter<String> itemsAdapter;
     ListView lvItems;
 
@@ -29,17 +32,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-//        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         lvItems = (ListView)findViewById(R.id.lvItems);
+
+        // Recover the items stored in the external txt file
         readItems();
-        items = new ArrayList<>();
+        //items = new ArrayList<>();
         itemsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
         lvItems.setAdapter(itemsAdapter);
-        items.add("First Item");
-        items.add("Second Item");
+        //items.add("First Item");
+        //items.add("Second Item");
         setupListViewListener();
         setupEditListViewListener();
     }

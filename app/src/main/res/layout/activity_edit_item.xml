@@ -21,10 +21,54 @@
         android:id="@+id/save_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/item_content_editText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="111dp"
         android:text="Save"
         tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="429dp" />
+        tools:layout_editor_absoluteY="429dp"
+        android:layout_marginBottom="171dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <RadioButton
+        android:id="@+id/high_radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/save_button"
+        android:layout_marginBottom="61dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_toLeftOf="@+id/medium_radioButton"
+        android:layout_toStartOf="@+id/medium_radioButton"
+        android:text="High" />
+
+    <RadioButton
+        android:id="@+id/medium_radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/high_radioButton"
+        android:layout_alignBottom="@+id/high_radioButton"
+        android:layout_centerHorizontal="true"
+        android:text="Medium" />
+
+    <RadioButton
+        android:id="@+id/low_radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/medium_radioButton"
+        android:layout_alignBottom="@+id/medium_radioButton"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_toEndOf="@+id/medium_radioButton"
+        android:layout_toRightOf="@+id/medium_radioButton"
+        android:text="Low" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Priority"
+        android:textSize="18sp"
+        android:layout_above="@+id/medium_radioButton"
+        android:layout_alignLeft="@+id/high_radioButton"
+        android:layout_alignStart="@+id/high_radioButton"
+        android:layout_marginBottom="15dp" />
 </RelativeLayout>
