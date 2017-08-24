@@ -22,8 +22,10 @@ public class MainActivity extends AppCompatActivity {
 
     // Declare array list to store different strings.
     ArrayList<String> items;
+    //ArrayList<UserItem> items;
     // Adapter to connect data and listview
-    ArrayAdapter<String> itemsAdapter;
+    //ArrayAdapter<String> itemsAdapter;
+    UsersAdapter itemsAdapter;
     ListView lvItems;
 
     // Used to determine the result type later
@@ -40,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
         // Recover the items stored in the external txt file
         readItems();
         //items = new ArrayList<>();
-        itemsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
+        //itemsAdapter = new ArrayAdapter<>(this, R.layout.item_user, items);
+        itemsAdapter = new UsersAdapter(this, items);
         lvItems.setAdapter(itemsAdapter);
         //items.add("First Item");
         //items.add("Second Item");
@@ -93,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
                         Intent goToEditScreenIntent = new Intent(MainActivity.this, EditItemActivity.class);
                         // Declare an object to hold the data
                         itemContent item_content = new itemContent();
+                        items.get(position);
                         item_content.setItemText(items.get(position));
                         item_content.setItemPosition(position);
                         // Bundle the data
