@@ -7,9 +7,10 @@ import java.io.Serializable;
  */
 public class itemContent implements Serializable {
     private String itemText;
+    private String itemPriority;
     private int itemPosition;
 
-    public void setItemText (String item_text) {
+    public void setItemText(String item_text) {
         itemText = item_text;
     }
 
@@ -23,6 +24,14 @@ public class itemContent implements Serializable {
 
     public int getItemPosition () {
         return itemPosition;
+    }
+
+    public void setItemPriority(String priority) {
+        itemPriority = priority;
+    }
+
+    public String getItemPriority() {
+        return itemPriority;
     }
 
 }

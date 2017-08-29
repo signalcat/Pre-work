@@ -41,4 +41,37 @@
         android:ems="10"
         android:hint="Enter a new item"
         android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/priority_textView"
+        android:layout_below="@+id/etNewItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="set priority" />
+
+    <RadioGroup
+        android:checkedButton="@+id/lowPriority_radioBtn"
+        android:orientation="horizontal"
+        android:layout_below="@+id/etNewItem"
+        android:layout_toRightOf="@+id/priority_textView"
+        android:id="@+id/priority_radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/highPriority_radioBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/mediumPriority_radioBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/lowPriority_radioBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
 </RelativeLayout>
